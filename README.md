@@ -1,0 +1,2 @@
+- Windows: Dubbelklicka på `run.bat` eller kör `.\run.bat` i terminalen.
+- Mac / Linux: Kör `./run.sh` i terminalen.
