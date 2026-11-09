@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtrera genre</title>
+</head>
+<body>
+<h1>Filtrera böcker efter genre</h1>
+
+<p><a href="/home">Till startsidan</a></p>
+
+<form action="/genre" method="get">
+    <label for="type">Genre:</label>
+    <select name="type" id="type">
+        <option value="">Alla genrer</option>
+        <option value="Deckare">Deckare</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Barnbok">Barnbok</option>
+    </select>
+    <button type="submit">Filtrera</button>
+</form>
+
+<h2>Resultat</h2>
+
+
+<p th:if="${books.empty}" style="color: red;">Inga böcker matchar vald genre.</p>
+
+<table border="1" th:unless="${books.empty}">
+    <tr>
+        <th>Titel</th>
+        <th>Författare</th>
+        <th>Genre</th>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.title}">Titel</td>
+        <td th:text="${book.author}">Författare</td>
+        <td th:text="${book.genre}">Genre</td>
+    </tr>
+</table>
+</body>
+</html>

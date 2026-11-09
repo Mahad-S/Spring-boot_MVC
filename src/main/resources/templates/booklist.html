@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Boklista</title>
+</head>
+<body>
+<h1>Rekommenderade böcker</h1>
+
+<p><a href="/home">Till startsidan</a></p>
+
+<table border="1">
+    <tr>
+        <th>Titel</th>
+        <th>Författare</th>
+        <th>Genre</th>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.title}">Titel</td>
+        <td th:text="${book.author}">Författare</td>
+        <td th:text="${book.genre}">Genre</td>
+    </tr>
+</table>
+</body>
+</html>
